@@ -1,0 +1,143 @@
+/* Fondo y tipografía */
+body {
+  background: url('../fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #f5f5f5;
+  line-height: 1.6;
+
+  /* Sticky footer */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Overlay oscuro para mejorar contraste */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  z-index: -1;
+}
+
+/* Contenedores generales */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Headers y enlaces */
+h1, h2, h3, h4 {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+a {
+  color: #f5f5f5;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #ffcc00;
+}
+
+/* Navbar personalizado */
+nav {
+  background-color: rgba(0,0,0,0.85);
+  border-bottom: 1px solid #ffffff33;
+}
+
+/* Secciones y áreas principales */
+section, article, aside, main, header {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6); /* semi-transparente */
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+/* Que main/header ocupen el alto disponible (para sticky footer) */
+main, header {
+  flex: 1 0 auto;
+}
+
+/* Cards de proyectos */
+.card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid #ffffff33;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255,204,0,0.5);
+}
+
+/* Formulario de contacto */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #ccc;
+}
+
+button {
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #ffaa00;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: rgba(0,0,0,0.85);
+  border-top: 1px solid #ffffff33;
+  margin-top: auto; /* empuja el footer al fondo */
+}
+
+/* Sección contacto */
+#contacto {
+  background-color: rgba(0,0,0,0.75);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,204,0,0.5);
+}
+
+#contacto h2 {
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+  .card {
+    margin-bottom: 20px;
+  }
+}
